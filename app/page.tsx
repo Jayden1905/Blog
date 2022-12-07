@@ -1,39 +1,22 @@
-import db from "../firebase/clientApp";
-import { collection, getDocs } from "firebase/firestore";
+import { PostsProps } from "../interfaces/index";
+import { getPosts } from "../services/services";
+import Blog from "../component/Blog";
 
-type AuthorData = {
-  name: string;
-  image: string;
-  id: string;
-};
+async function fetchPosts() {
+  const data = await getPosts();
 
-async function getAuthor() {
-  const colRef = collection(db, "author");
-
-  const snapshots = await getDocs(colRef);
-
-  const docs = snapshots.docs.map((doc) => {
-    const data = doc.data();
-    data.id = doc.id;
-
-    return data;
-  });
-
-  return docs as AuthorData[];
+  return data as PostsProps[];
 }
 
 export default async function HomePage() {
-  const author = await getAuthor();
+  const data = await fetchPosts();
+
   return (
     <div>
-      <h1>Home Page</h1>
-      {author.map((au) => {
-        return (
-          <div key={au.id}>
-            <h1>{au.name}</h1>
-          </div>
-        );
-      })}
+      <h1 className="text-red-500">Home Page</h1>
+      {data.map((post) => (
+        <Blog key={post.node.id} post={post.node} />
+      ))}
     </div>
   );
 }
