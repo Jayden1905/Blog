@@ -7,10 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html>
       <body>
         <StateProvider>
-          <main>
-            <nav></nav>
-            {children}
-          </main>
+          <main className="w-screen h-screen">{children}</main>
         </StateProvider>
       </body>
     </html>

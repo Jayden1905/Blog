@@ -12,8 +12,8 @@ export default async function HomePage() {
   const data = await fetchPosts();
 
   return (
-    <div>
-      <h1 className="text-red-500">Home Page</h1>
+    <div className="container mx-auto sm:px-0 px-14">
+      <h1>Home Page</h1>
       {data.map((post) => (
         <Blog key={post.node.id} post={post.node} />
       ))}
