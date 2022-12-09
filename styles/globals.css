@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Saira Condensed";
+  src: url("../public/fonts/Saira.ttf");
+}
+
+@font-face {
+  font-family: "Saira Condensed Light";
+  src: url("../public/fonts/Saira-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "IBMP";
+  src: url("../public//fonts/IBMPlexSans-Light.ttf");
+}

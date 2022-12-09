@@ -1,13 +1,15 @@
 import "../styles/globals.css";
 import { ReactNode } from "react";
-import StateProvider from "../component/context/ContextProvider";
+import StateProvider from "./(component)/context/ContextProvider";
+import NavBar from "./(component)/NavBar/NavBar";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html>
-      <body>
+      <body className="bg-primary">
         <StateProvider>
-          <main className="w-screen h-screen">{children}</main>
+          <NavBar />
+          <main>{children}</main>
         </StateProvider>
       </body>
     </html>

@@ -2,16 +2,23 @@ export type PostsProps = {
   node: NodeProps;
 };
 
-export type NodeProps = {
+export type FeatureProps = {
+  author: AuthorPorps;
+} & WidgetProps;
+
+export type WidgetProps = {
+  title: string;
+  featureImage: string;
   createdAt: string;
   slug: string;
+};
+
+export type NodeProps = {
   id: string;
-  title: string;
   excerpt: string;
-  featureImage: FeatureImageProps;
   author: AuthorPorps;
   categories: CategoryProps[];
-};
+} & WidgetProps;
 
 export type FeatureImageProps = {
   url: string;

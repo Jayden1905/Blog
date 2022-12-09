@@ -56,7 +56,7 @@ export const getCategories = async () => {
 
 export const getPostDetails = async (slug: string) => {
   const query = gql`
-    query GetPostDetails($slug: String!) {
+    query GetPostDetails($slug: String) {
       post(where: { slug: $slug }) {
         title
         excerpt
@@ -88,9 +88,15 @@ export const getPostDetails = async (slug: string) => {
   return result.post;
 };
 
-export const getSimilarPosts = async (categories: any, slug: string) => {
+export const getSimilarPosts = async ({
+  categories,
+  slug,
+}: {
+  categories: string[];
+  slug: string;
+}) => {
   const query = gql`
-    query GetPostDetails($slug: String!, $categories: [String!]) {
+    query GetPostDetails($slug: String, $categories: [String]) {
       posts(
         where: {
           slug_not: $slug
@@ -99,7 +105,7 @@ export const getSimilarPosts = async (categories: any, slug: string) => {
         last: 3
       ) {
         title
-        featuredImage {
+        featureImage {
           url
         }
         createdAt
@@ -114,14 +120,14 @@ export const getSimilarPosts = async (categories: any, slug: string) => {
 
 export const getAdjacentPosts = async (createdAt: string, slug: string) => {
   const query = gql`
-    query GetAdjacentPosts($createdAt: DateTime!, $slug: String!) {
+    query GetAdjacentPosts($createdAt: DateTime, $slug: String) {
       next: posts(
         first: 1
         orderBy: createdAt_ASC
         where: { slug_not: $slug, AND: { createdAt_gte: $createdAt } }
       ) {
         title
-        featuredImage {
+        featureImage {
           url
         }
         createdAt
@@ -133,7 +139,7 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
         where: { slug_not: $slug, AND: { createdAt_lte: $createdAt } }
       ) {
         title
-        featuredImage {
+        featureImage {
           url
         }
         createdAt
@@ -149,7 +155,7 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
 
 export const getCategoryPost = async (slug: string) => {
   const query = gql`
-    query GetCategoryPost($slug: String!) {
+    query GetCategoryPost($slug: String) {
       postsConnection(where: { categories_some: { slug: $slug } }) {
         edges {
           cursor
@@ -166,7 +172,7 @@ export const getCategoryPost = async (slug: string) => {
             slug
             title
             excerpt
-            featuredImage {
+            featureImage {
               url
             }
             categories {
@@ -194,7 +200,7 @@ export const getFeaturedPosts = async () => {
             url
           }
         }
-        featuredImage {
+        featureImage {
           url
         }
         title
@@ -223,7 +229,7 @@ export const submitComment = async (obj: any) => {
 
 export const getComments = async (slug: string) => {
   const query = gql`
-    query GetComments($slug: String!) {
+    query GetComments($slug: String) {
       comments(where: { post: { slug: $slug } }) {
         name
         createdAt
@@ -245,7 +251,7 @@ export const getRecentPosts = async () => {
         last: 3
       ) {
         title
-        featuredImage {
+        featureImage {
           url
         }
         createdAt
