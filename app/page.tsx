@@ -20,8 +20,8 @@ export default async function HomePage() {
   const features = await fetchFeaturedPosts();
 
   return (
-    <div className="container mx-auto md:px-20 px-10 bg-primary font-ibmp">
-      <div className="flex flex-col gap-14 items-center relative md:top-0 top-24">
+    <div className="container mx-auto scroll-smooth bg-primary px-10 font-ibmp md:px-20">
+      <div className="relative top-24 flex flex-col items-center gap-14 md:top-0">
         <Features features={features} />
         {post.map((post) => (
           <Blog
