@@ -4,11 +4,13 @@ export type PostsProps = {
 
 export type FeatureProps = {
   author: AuthorPorps;
+  excerpt: string;
+  categories: CategoryProps[];
 } & WidgetProps;
 
 export type WidgetProps = {
   title: string;
-  featureImage: string;
+  featureImage: FeatureImageProps;
   createdAt: string;
   slug: string;
 };
