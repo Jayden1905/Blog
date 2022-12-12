@@ -21,15 +21,17 @@ export default async function HomePage() {
 
   return (
     <div className="container mx-auto scroll-smooth bg-primary px-10 font-ibmp md:px-20">
-      <div className="relative top-24 flex flex-col items-center gap-14 md:top-0">
+      <div className="relative md:top-40 top-24 flex flex-col items-center gap-14 lg:top-0">
         <Features features={features} />
-        {post.map((post) => (
-          <Blog
-            key={post.node.id}
-            post={post.node}
-            categories={post.node.categories}
-          />
-        ))}
+        <div className="grid xl:px-16 px-0 lg:grid-cols-2 grid-cols-1">
+          {post.map((post) => (
+            <Blog
+              key={post.node.id}
+              post={post.node}
+              categories={post.node.categories}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

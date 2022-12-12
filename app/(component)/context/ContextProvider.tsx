@@ -1,24 +1,38 @@
 "use client";
+
 import { createContext, ReactNode, useContext } from "react";
 import GlobalContext from "./GlobalState";
+
+type InitialStateProps = {
+  windowDimension: {
+    width: number;
+    height: number;
+  };
+};
+
+const initialState = {
+  windowDimension: {
+    width: 1025,
+    height: 0,
+  },
+};
 
 type ContextProviderProps = {
   children: ReactNode;
 };
 
 type ContextProps = {
-  useStore: any;
+  useStore: <SelectorOutput>(
+    selector: (store: InitialStateProps) => SelectorOutput
+  ) => [SelectorOutput, (value: Partial<InitialStateProps>) => void];
 };
 
 const GlobalState = createContext({} as ContextProps);
-
 export function useGlobalContext() {
   return useContext(GlobalState);
 }
 
-const { Provider, useStore } = GlobalContext({
-  count: 0,
-});
+const { Provider, useStore } = GlobalContext(initialState as InitialStateProps);
 
 export default function ContextProvider({
   children,

@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,23 +11,46 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navIcon } from "../../../animations/animation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGlobalContext } from "../context/ContextProvider";
 
 export default function NavBar() {
+  const { useStore } = useGlobalContext();
+  const [windowDimension, setStore] = useStore(
+    (store) => store.windowDimension
+  );
   const pathname = usePathname();
   const navMenu = [
     { name: "Home", icon: faHouse, path: "/" },
     { name: "About", icon: faCircleInfo, path: "/about" },
     { name: "Contact", icon: faPaperPlane, path: "/contact" },
   ];
+
   const [open, setOpen] = useState(false);
+
+  const detectWindowSize = () => {
+    setStore({
+      windowDimension: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", detectWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", detectWindowSize);
+    };
+  }, [windowDimension]);
 
   return (
     <div
       id="top"
       className={`fixed right-0 left-0 z-10 ${
         open ? "bg-white" : "bg-primary"
-      } py-6 md:relative md:py-14`}
+      } py-6 md:py-14 lg:relative`}
     >
       <nav className="container mx-auto flex items-end justify-between gap-0 px-10 md:px-20 xl:justify-center xl:gap-[33rem]">
         <Link href="/" className="logo flex items-end gap-1">
@@ -38,20 +62,28 @@ export default function NavBar() {
         <div
           className={`absolute top-full left-0 ${
             open ? "bg-white" : "hidden"
-          } w-full select-none items-center justify-center gap-8 px-10 sm:px-24 md:relative md:top-0 md:flex md:w-auto md:px-0`}
+          } top-full w-full select-none lg:relative lg:flex lg:w-auto`}
         >
-          {navMenu.map((item, index) => (
-            <NavItem
-              key={index}
-              pathname={pathname}
-              item={item}
-              open={open}
-            ></NavItem>
-          ))}
+          <div
+            className={`${
+              windowDimension.width <= 1024
+                ? "container mx-auto px-10 md:px-20"
+                : ""
+            } items-center justify-center gap-8 lg:flex`}
+          >
+            {navMenu.map((item, index) => (
+              <NavItem
+                key={index}
+                pathname={pathname}
+                item={item}
+                open={open}
+              ></NavItem>
+            ))}
+          </div>
         </div>
         <div
           onClick={() => setOpen((prev) => !prev)}
-          className="menu flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-white md:hidden"
+          className="menu flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-white lg:hidden"
         >
           <FontAwesomeIcon
             icon={faEllipsis}
