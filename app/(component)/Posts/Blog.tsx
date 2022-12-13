@@ -16,7 +16,7 @@ export default function Blog({ post, categories }: BlogProps) {
 
   return (
     <Link href={`/post/${post.slug}`}>
-      <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row">
+      <div className="group flex h-full w-full flex-col md:h-[30rem] lg:h-[35rem] md:flex-row">
         <div className="relative h-56 w-full md:h-full md:w-1/2">
           <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
             <FontAwesomeIcon
@@ -31,7 +31,7 @@ export default function Blog({ post, categories }: BlogProps) {
           />
         </div>
         <div className="flex h-full w-full flex-col items-start bg-white p-8 text-start md:w-1/2 md:p-10">
-          <p className="mb-2 text-[0.65rem] tracking-widest text-secondary">
+          <p className="mb-2 text-[0.75rem] tracking-widest text-secondary">
             {category.name.toUpperCase()}
           </p>
           <h1 className="text-2xl font-extrabold">{post.title}</h1>

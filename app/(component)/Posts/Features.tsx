@@ -33,7 +33,7 @@ export default function Features({ features }: Props) {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full w-full md:h-[50vh]"
+        className="h-full w-full md:h-[50vh] lg:h-[60vh]"
       >
         {features.map((post) => (
           <SwiperSlide
@@ -60,7 +60,7 @@ export default function Features({ features }: Props) {
               href={`/post/${post.slug}`}
               className="flex h-full w-full flex-col items-start bg-black p-4 text-start text-white md:w-1/2 md:p-10"
             >
-              <p className="mb-2 text-[0.65rem] tracking-widest text-[#c68a09]">
+              <p className="mb-2 text-[0.75rem] tracking-widest text-[#c68a09]">
                 {category.map((item) => item.name.toUpperCase())}
               </p>
               <h1 className="text-xl font-extrabold sm:text-4xl md:text-2xl">
