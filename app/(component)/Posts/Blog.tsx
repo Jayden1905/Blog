@@ -16,7 +16,7 @@ export default function Blog({ post, categories }: BlogProps) {
 
   return (
     <Link href={`/post/${post.slug}`}>
-      <div className="group flex h-full w-full flex-col md:h-[30rem] lg:h-[35rem] md:flex-row">
+      <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row lg:h-[35rem]">
         <div className="relative h-56 w-full md:h-full md:w-1/2">
           <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
             <FontAwesomeIcon
