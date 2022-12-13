@@ -52,7 +52,7 @@ export default function NavBar() {
         open ? "bg-white" : "bg-primary"
       } py-6 lg:relative lg:py-14`}
     >
-      <nav className="container mx-auto flex items-end justify-between gap-0 px-10 md:px-20 xl:justify-center xl:gap-[33rem]">
+      <nav className="container mx-auto flex items-end justify-between gap-0 px-4 md:px-20">
         <Link href="/" className="logo flex items-end gap-1">
           <div className="h-8 w-8">
             <img src="TheJourney.png" className="h-full w-full object-cover" />
@@ -67,7 +67,7 @@ export default function NavBar() {
           <div
             className={`${
               windowDimension.width <= 1024
-                ? "container mx-auto px-10 md:px-20"
+                ? "container mx-auto px-4 md:px-20"
                 : ""
             } items-center justify-center gap-8 lg:flex`}
           >

@@ -11,6 +11,7 @@ import Link from "next/link";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 type Props = {
   features: FeatureProps[];
@@ -49,7 +50,7 @@ export default function Features({ features }: Props) {
                   className="translate-y-6 translate-x-6 text-white transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
                 />
               </div>
-              <img
+              <motion.img
                 className="select-none"
                 src={post.featureImage.url}
                 alt={post.slug}
@@ -68,7 +69,7 @@ export default function Features({ features }: Props) {
               <p className="mt-4 text-sm font-thin sm:text-xl md:text-lg">
                 {post.excerpt}
               </p>
-              <p className="mt-auto text-sm">
+              <p className="mt-4 text-sm sm:mt-auto">
                 {moment(post.createdAt).format("MMM DD, YYYY")}
               </p>
             </Link>
