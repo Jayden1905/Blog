@@ -7,7 +7,7 @@ import ScrollTop from "./(component)/ScrollTop/ScrollTop";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html>
-      <body className="scroll-smooth bg-primary">
+      <body id="top" className="scroll-smooth bg-primary">
         <StateProvider>
           <ScrollTop />
           <NavBar />

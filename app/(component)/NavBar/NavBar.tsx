@@ -50,7 +50,7 @@ export default function NavBar() {
       id="top"
       className={`fixed right-0 left-0 z-10 ${
         open ? "bg-white" : "bg-primary"
-      } py-6 md:py-14 lg:relative`}
+      } py-6 lg:relative lg:py-14`}
     >
       <nav className="container mx-auto flex items-end justify-between gap-0 px-10 md:px-20 xl:justify-center xl:gap-[33rem]">
         <Link href="/" className="logo flex items-end gap-1">
