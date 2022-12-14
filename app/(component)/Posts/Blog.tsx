@@ -17,7 +17,7 @@ export default function Blog({ post, categories }: BlogProps) {
   return (
     <Link href={`/post/${post.slug}`}>
       <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row lg:h-[35rem]">
-        <div className="relative h-56 w-full md:h-full md:w-1/2">
+        <div className="relative h-full w-full md:w-1/2">
           <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
@@ -36,7 +36,7 @@ export default function Blog({ post, categories }: BlogProps) {
           </p>
           <h1 className="text-2xl font-extrabold">{post.title}</h1>
           <p className="tfont-thin mt-4 text-sm opacity-60">{post.excerpt}</p>
-          <p className="mt-4 text-sm opacity-60 sm:mt-auto">
+          <p className="mt-4 text-sm opacity-60 md:mt-auto">
             {moment(post.createdAt).format("MMM DD, YYYY")}
           </p>
         </div>

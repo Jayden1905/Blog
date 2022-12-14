@@ -33,7 +33,7 @@ export default function Features({ features }: Props) {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full w-full md:h-[50vh] lg:h-[60vh]"
+        className="h-full w-full md:h-[30rem] lg:h-[40rem]"
       >
         {features.map((post) => (
           <SwiperSlide
@@ -42,7 +42,7 @@ export default function Features({ features }: Props) {
           >
             <Link
               href={`/post/${post.slug}`}
-              className="relative h-56 w-full md:h-full md:w-1/2"
+              className="relative h-full w-full md:w-1/2"
             >
               <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
                 <FontAwesomeIcon
@@ -63,13 +63,9 @@ export default function Features({ features }: Props) {
               <p className="mb-2 text-[0.75rem] tracking-widest text-[#c68a09]">
                 {category.map((item) => item.name.toUpperCase())}
               </p>
-              <h1 className="text-xl font-extrabold sm:text-4xl md:text-2xl">
-                {post.title}
-              </h1>
-              <p className="mt-4 text-sm font-thin sm:text-xl md:text-lg">
-                {post.excerpt}
-              </p>
-              <p className="mt-4 text-sm sm:mt-auto">
+              <h1 className="text-2xl font-extrabold">{post.title}</h1>
+              <p className="tfont-thin mt-4 text-sm">{post.excerpt}</p>
+              <p className="mt-4 text-sm md:mt-auto">
                 {moment(post.createdAt).format("MMM DD, YYYY")}
               </p>
             </Link>
