@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import { ReactNode } from "react";
-import StateProvider from "./(component)/context/ContextProvider";
-import NavBar from "./(component)/NavBar/NavBar";
-import ScrollTop from "./(component)/ScrollTop/ScrollTop";
+import StateProvider from "../components/context/ContextProvider";
+import NavBar from "../components/NavBar/NavBar";
+import ScrollTop from "../components/ScrollTop/ScrollTop";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

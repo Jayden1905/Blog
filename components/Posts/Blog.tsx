@@ -1,5 +1,5 @@
 "use client";
-import { CategoryProps, NodeProps } from "../../../interfaces/index";
+import { CategoryProps, NodeProps } from "../../interfaces/index";
 import moment from "moment";
 import { motion } from "framer-motion";
 import Link from "next/link";

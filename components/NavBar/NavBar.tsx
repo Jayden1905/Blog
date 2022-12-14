@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navIcon } from "../../../animations/animation";
+import { navIcon } from "../../animations/animation";
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../context/ContextProvider";
 

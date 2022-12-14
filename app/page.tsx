@@ -1,7 +1,7 @@
 import { PostsProps, FeatureProps } from "../interfaces/index";
 import { getFeaturedPosts, getPosts } from "../services/services";
-import Blog from "./(component)/Posts/Blog";
-import Features from "./(component)/Posts/Features";
+import Blog from "../components/Posts/Blog";
+import Features from "../components/Posts/Features";
 
 async function fetchPosts() {
   const data = await getPosts();

@@ -5,7 +5,7 @@ import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
-import { FeatureProps } from "../../../interfaces";
+import { FeatureProps } from "../../interfaces";
 import "./styles.css";
 import Link from "next/link";
 import moment from "moment";
