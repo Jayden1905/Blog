@@ -4,7 +4,7 @@ import StateProvider from "../components/context/ContextProvider";
 import NavBar from "../components/NavBar/NavBar";
 import ScrollTop from "../components/ScrollTop/ScrollTop";
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html>
       <body id="top" className="scroll-smooth bg-primary">

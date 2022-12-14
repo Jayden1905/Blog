@@ -15,9 +15,9 @@ export default function Blog({ post, categories }: BlogProps) {
   const [category] = categories.map((item) => item);
 
   return (
-    <Link href={`/post/${post.slug}`}>
+    <Link href={`/post/${post.slug}`} className="shadow-md">
       <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row lg:h-[35rem]">
-        <div className="relative h-full w-full md:w-1/2">
+        <div className="relative h-52 w-full md:h-full md:w-1/2">
           <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
@@ -30,13 +30,13 @@ export default function Blog({ post, categories }: BlogProps) {
             alt={post.slug}
           />
         </div>
-        <div className="flex h-full w-full flex-col items-start bg-white p-8 text-start md:w-1/2 md:p-10">
+        <div className="flex h-52 w-full flex-col items-start bg-white p-4 text-start md:h-full md:w-1/2 md:p-10">
           <p className="mb-2 text-[0.75rem] tracking-widest text-secondary">
             {category.name.toUpperCase()}
           </p>
           <h1 className="text-2xl font-extrabold">{post.title}</h1>
-          <p className="tfont-thin mt-4 text-sm opacity-60">{post.excerpt}</p>
-          <p className="mt-4 text-sm opacity-60 md:mt-auto">
+          <p className="mt-4 text-sm font-thin opacity-60">{post.excerpt}</p>
+          <p className="mt-auto text-sm opacity-60">
             {moment(post.createdAt).format("MMM DD, YYYY")}
           </p>
         </div>

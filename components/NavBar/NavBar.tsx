@@ -28,6 +28,10 @@ export default function NavBar() {
 
   const [open, setOpen] = useState(false);
 
+  const closeNav = (value: boolean) => {
+    setOpen(value);
+  };
+
   const detectWindowSize = () => {
     setStore({
       windowDimension: {
@@ -76,7 +80,7 @@ export default function NavBar() {
                 key={index}
                 pathname={pathname}
                 item={item}
-                open={open}
+                closeNav={closeNav}
               ></NavItem>
             ))}
           </div>
@@ -102,16 +106,19 @@ type NavItemProps = {
     icon: any;
     path: string;
   };
-  open: boolean;
+  closeNav: (value: boolean) => void;
 };
 
-function NavItem({ pathname, item, open }: NavItemProps) {
+function NavItem({ pathname, item, closeNav }: NavItemProps) {
   return (
     <Link
       href={item.path}
       className={`flex cursor-pointer items-center justify-center gap-4 overflow-hidden rounded-full px-4 py-2 md:gap-2 ${
         pathname === item.path ? "bg-secondary text-white" : ""
       }`}
+      onClick={() => {
+        closeNav(false);
+      }}
     >
       <motion.div
         className={`text-sm`}
