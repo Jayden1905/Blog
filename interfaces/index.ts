@@ -1,6 +1,16 @@
+import { ElementNode } from "@graphcms/rich-text-types";
+
 export type PostsProps = {
   node: NodeProps;
 };
+
+export type PostDetailProps = {
+  content: {
+    raw: {
+      children: ElementNode[];
+    };
+  };
+} & FeatureProps;
 
 export type FeatureProps = {
   author: AuthorPorps;

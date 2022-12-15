@@ -49,14 +49,10 @@ export default function Features({ features }: Props) {
                   className="translate-y-6 translate-x-6 text-white transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
                 />
               </div>
-              <motion.img
-                className="select-none"
-                src={post.featureImage.url}
-                alt={post.slug}
-              />
+              <motion.img src={post.featureImage.url} alt={post.slug} />
             </Link>
             <Link
-              href={`/posts/${post.slug}`}
+              href={`/post/${post.slug}`}
               className="flex h-52 w-full flex-col items-start bg-black p-4 text-start text-white md:h-full md:w-1/2 md:p-10"
             >
               <p className="mb-2 text-[0.75rem] tracking-widest text-[#c68a09]">

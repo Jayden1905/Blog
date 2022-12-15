@@ -60,7 +60,7 @@ export const getPostDetails = async (slug: string) => {
       post(where: { slug: $slug }) {
         title
         excerpt
-        featuredImage {
+        featureImage {
           url
         }
         author {

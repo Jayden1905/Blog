@@ -25,7 +25,7 @@ export default function Blog({ post, categories }: BlogProps) {
             />
           </div>
           <motion.img
-            className="h-full w-full select-none object-cover object-center"
+            className="h-full w-full object-cover object-center"
             src={post.featureImage.url}
             alt={post.slug}
           />
