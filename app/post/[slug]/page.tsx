@@ -2,7 +2,7 @@ import ArticleDetails from "../../../components/Posts/ArticleDetails";
 import { PostDetailProps, Slug } from "../../../interfaces";
 import { getPostDetails, getSlugs } from "../../../services/services";
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 export const generateStaticParams = async () => {
   const slugs = (await getSlugs()) as Slug;

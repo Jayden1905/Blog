@@ -3,6 +3,8 @@ import { getFeaturedPosts, getPosts } from "../services/services";
 import Blog from "../components/Posts/Blog";
 import Features from "../components/Posts/Features";
 
+export const revalidate = 30;
+
 async function fetchPosts() {
   const data = await getPosts();
 

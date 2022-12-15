@@ -66,7 +66,7 @@ export default function NavBar() {
         <div
           className={`absolute top-full left-0 ${
             open ? "bg-white" : "hidden"
-          } top-full w-full select-none lg:relative lg:flex lg:w-auto`}
+          } top-full w-full lg:relative lg:flex lg:w-auto`}
         >
           <div
             className={`${
