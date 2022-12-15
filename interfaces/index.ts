@@ -12,6 +12,14 @@ export type PostDetailProps = {
   };
 } & FeatureProps;
 
+export type Slug = {
+  posts: slug[];
+};
+
+export type slug = {
+  slug: string;
+};
+
 export type FeatureProps = {
   author: AuthorPorps;
   excerpt: string;

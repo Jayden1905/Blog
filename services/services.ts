@@ -39,6 +39,20 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
+export const getSlugs = async () => {
+  const query = gql`
+    query Slugs {
+      posts {
+        slug
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result;
+};
+
 export const getCategories = async () => {
   const query = gql`
     query GetGategories {
@@ -212,7 +226,7 @@ export const getFeaturedPosts = async () => {
           slug
         }
       }
-    }   
+    }
   `;
 
   const result = await request(graphqlAPI, query);

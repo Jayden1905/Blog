@@ -1,8 +1,17 @@
 import ArticleDetails from "../../../components/Posts/ArticleDetails";
-import { PostDetailProps } from "../../../interfaces";
-import { getPostDetails } from "../../../services/services";
+import { PostDetailProps, Slug } from "../../../interfaces";
+import { getPostDetails, getSlugs } from "../../../services/services";
 
-export const revalidate = 10;
+export const revalidate = 60;
+
+export const generateStaticParams = async () => {
+  const slugs = (await getSlugs()) as Slug;
+  const slugRoutes = slugs.posts.map((slug) => slug.slug);
+
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+};
 
 const fetchPostDetail = async (slug: string) => {
   const data = await getPostDetails(slug);
