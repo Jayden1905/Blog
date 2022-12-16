@@ -2,7 +2,7 @@
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import moment from "moment";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { PostDetailProps } from "../../interfaces";
 import "../../styles/globals.css";
 
@@ -12,6 +12,10 @@ type ArticleDetailsProps = {
 
 export default function ArticleDetails({ post }: ArticleDetailsProps) {
   const [category] = post.categories.map((item) => item);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
 
   return (
     <div className="container top-24 mx-auto mb-14 flex h-full flex-col items-center justify-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
