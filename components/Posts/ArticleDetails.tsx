@@ -26,7 +26,7 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
           alt="featureImage"
         />
       </div>
-      <div className="w-full lg:w-[70%]">
+      <div className="w-full lg:w-[65%]">
         <p className="mb-2 text-[0.75rem] tracking-widest text-secondary">
           {category.name.toUpperCase()}
         </p>
