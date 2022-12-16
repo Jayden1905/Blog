@@ -32,7 +32,7 @@ export default function Features({ features }: Props) {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full w-full md:h-[30rem] lg:h-[35rem]"
+        className="h-full w-full md:h-[30rem] lg:h-[40rem]"
       >
         {features.map((post) => (
           <SwiperSlide

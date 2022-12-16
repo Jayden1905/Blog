@@ -23,9 +23,9 @@ export default async function HomePage() {
 
   return (
     <div className="container relative top-24 mx-auto h-full scroll-smooth bg-primary px-4 font-ibmp md:px-20 lg:top-0">
-      <div className="relative flex h-full flex-col items-center gap-14 scroll-smooth">
+      <div className="relative flex h-full flex-col items-center justify-center gap-14 scroll-smooth">
         <Features features={features} />
-        <div className="mb-14 grid h-full w-full grid-cols-1 place-items-center gap-14 lg:grid-cols-2">
+        <div className="mb-14 grid h-full w-full grid-cols-1 place-items-center gap-14 px-0 lg:grid-cols-2 lg:px-14">
           {post.map((post) => (
             <Blog
               key={post.node.id}

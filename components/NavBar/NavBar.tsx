@@ -57,7 +57,7 @@ export default function NavBar() {
         open ? "bg-white" : "bg-primary"
       } py-6 lg:relative lg:py-14`}
     >
-      <nav className="container mx-auto flex items-end justify-between gap-0 px-4 md:px-20">
+      <nav className="container mx-auto flex items-end justify-between gap-0 px-4 md:px-20 lg:px-32">
         <Link href="/" className="logo flex items-end gap-1">
           <div className="h-8 w-8">
             <Image

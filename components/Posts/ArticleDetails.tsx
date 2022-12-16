@@ -14,15 +14,15 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
   const [category] = post.categories.map((item) => item);
 
   return (
-    <div className="container top-24 mx-auto mb-14 flex h-full flex-col items-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
-      <div className="h-[25rem] w-full md:h-[30rem] lg:h-[35rem] lg:w-[90%]">
+    <div className="container top-24 mx-auto mb-14 flex h-full flex-col items-center justify-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
+      <div className="h-[25rem] w-full md:h-[30rem] lg:h-[40rem]">
         <img
           className="h-full w-full object-cover object-center"
           src={post.featureImage.url}
           alt="featureImage"
         />
       </div>
-      <div className="w-full lg:w-[60%]">
+      <div className="w-full lg:w-[70%]">
         <p className="mb-2 text-[0.75rem] tracking-widest text-secondary">
           {category.name.toUpperCase()}
         </p>
