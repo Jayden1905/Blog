@@ -31,8 +31,27 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
         <p className="mt-4 mb-4 text-sm opacity-60">
           {moment(post.createdAt).format("MMMM DD, YYYY")}
         </p>
-        <div className="flex flex-col gap-4 leading-7">
-          <RichText content={post.content.raw} />
+        <div className="pointer-events-auto flex flex-col gap-4 leading-7">
+          <RichText
+            content={post.content.raw}
+            renderers={{
+              h1: ({ children }) => <h1 className="text-3xl">{children}</h1>,
+              h2: ({ children }) => <h1 className="text-2xl">{children}</h1>,
+              h3: ({ children }) => <h1 className="text-xl">{children}</h1>,
+              h4: ({ children }) => <h1 className="text-lg">{children}</h1>,
+              h5: ({ children }) => <h1 className="text-lg">{children}</h1>,
+              h6: ({ children }) => <h1 className="text-lg">{children}</h1>,
+              a: ({ children, href }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  className="pointer-events-auto cursor-pointer underline"
+                >
+                  {children}
+                </a>
+              ),
+            }}
+          />
         </div>
       </div>
     </div>
