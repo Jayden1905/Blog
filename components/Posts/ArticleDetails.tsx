@@ -1,10 +1,10 @@
 "use client";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import moment from "moment";
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { PostDetailProps } from "../../interfaces";
 import "../../styles/globals.css";
+import AdjacentPost from "./AdjacentPost";
 
 type ArticleDetailsProps = {
   post: PostDetailProps;
@@ -15,7 +15,7 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
 
   useEffect(() => {
     window.scroll(0, 0);
-  });
+  }, []);
 
   return (
     <div className="container top-24 mx-auto mb-14 flex h-full flex-col items-center justify-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
@@ -58,6 +58,7 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
           />
         </div>
       </div>
+      <AdjacentPost post={post} />
     </div>
   );
 }

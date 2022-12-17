@@ -14,9 +14,9 @@ export const generateStaticParams = async () => {
 };
 
 const fetchPostDetail = async (slug: string) => {
-  const data = await getPostDetails(slug);
+  const data = (await getPostDetails(slug)) as PostDetailProps;
 
-  return data as PostDetailProps;
+  return data;
 };
 
 type Params = {

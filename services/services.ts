@@ -146,6 +146,10 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
         }
         createdAt
         slug
+        categories {
+          name
+          slug
+        }
       }
       previous: posts(
         first: 1
@@ -157,7 +161,12 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
           url
         }
         createdAt
+        excerpt
         slug
+        categories {
+          name
+          slug
+        }
       }
     }
   `;

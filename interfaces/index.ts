@@ -33,6 +33,11 @@ export type WidgetProps = {
   slug: string;
 };
 
+export type AdjacentProps = {
+  categories: CategoryProps[];
+  excerpt: string;
+} & WidgetProps;
+
 export type NodeProps = {
   id: string;
   excerpt: string;

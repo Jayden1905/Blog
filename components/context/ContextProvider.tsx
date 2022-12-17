@@ -8,6 +8,7 @@ type InitialStateProps = {
     width: number;
     height: number;
   };
+  adjacentPosts: any;
 };
 
 const initialState = {
