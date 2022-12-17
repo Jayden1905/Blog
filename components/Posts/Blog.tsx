@@ -19,7 +19,7 @@ export default function Blog({ post, categories, length }: BlogProps) {
   return (
     <Link
       href={`/post/${post.slug}`}
-      className={`shadow-md ${odd ? "last:col-span-2" : ""}`}
+      className={`shadow-md ${odd ? "lg:last:col-span-2" : ""}`}
     >
       <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row">
         <div className="relative h-52 w-full md:h-full md:w-1/2">
