@@ -18,7 +18,7 @@ export default function ArticleDetails({ post }: ArticleDetailsProps) {
   }, []);
 
   return (
-    <div className="container top-32 mx-auto mb-14 flex h-full flex-col items-center justify-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
+    <div className="container relative top-32 mx-auto mb-14 flex h-full flex-col items-center justify-center gap-8 bg-primary px-4 font-ibmp md:px-20 lg:top-0">
       <div className="h-[25rem] w-full md:h-[30rem] lg:h-[40rem]">
         <img
           className="h-full w-full object-cover object-center"
