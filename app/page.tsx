@@ -20,6 +20,7 @@ async function fetchFeaturedPosts() {
 export default async function HomePage() {
   const post = await fetchPosts();
   const features = await fetchFeaturedPosts();
+  const postLength = post.length;
 
   return (
     <div className="container relative top-24 mx-auto h-full scroll-smooth bg-primary px-4 font-ibmp md:px-20 lg:top-0">
@@ -31,6 +32,7 @@ export default async function HomePage() {
               key={post.node.id}
               post={post.node}
               categories={post.node.categories}
+              length={postLength}
             />
           ))}
         </div>

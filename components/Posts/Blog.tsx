@@ -9,13 +9,18 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 type BlogProps = {
   post: NodeProps;
   categories: CategoryProps[];
+  length: number;
 };
 
-export default function Blog({ post, categories }: BlogProps) {
+export default function Blog({ post, categories, length }: BlogProps) {
   const [category] = categories.map((item) => item);
+  const odd = length / 2 !== 0 ? true : false;
 
   return (
-    <Link href={`/post/${post.slug}`} className="shadow-md">
+    <Link
+      href={`/post/${post.slug}`}
+      className={`shadow-md ${odd ? "last:col-span-2" : ""}`}
+    >
       <div className="group flex h-full w-full flex-col md:h-[30rem] md:flex-row">
         <div className="relative h-52 w-full md:h-full md:w-1/2">
           <div className="absolute top-0 left-0 hidden h-full w-full items-end justify-end bg-secondary p-4 opacity-0 !transition-all !duration-300 !ease-out group-hover:opacity-80 md:flex">
