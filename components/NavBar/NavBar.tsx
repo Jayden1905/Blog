@@ -57,18 +57,15 @@ export default function NavBar() {
         open ? "bg-white" : "bg-primary"
       } py-6 lg:relative lg:py-14`}
     >
-      <nav className="container mx-auto flex items-end justify-between gap-0 px-4 md:px-20 lg:px-32">
-        <Link href="/" className="logo flex items-end gap-1">
-          <div className="h-8 w-8">
-            <Image
-              width={32}
-              height={32}
-              src="/TheJourney.png"
-              alt={"logo"}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <h1 className="text-xl font-light tracking-wide">Journey</h1>
+      <nav className="container mx-auto flex items-center justify-between gap-0 px-4 md:px-20 lg:px-32">
+        <Link href="/" className="logo flex items-center gap-1">
+          <Image
+            width={180}
+            height={180}
+            src="/logo.png"
+            alt={"logo"}
+            className="h-full w-full object-cover"
+          />
         </Link>
         <div
           className={`absolute top-full left-0 ${

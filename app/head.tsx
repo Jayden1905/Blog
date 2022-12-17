@@ -3,7 +3,7 @@ import React from "react";
 const Head = () => {
   return (
     <>
-      <title>The Journey</title>
+      <title>Code Chronicles</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content="The Journey" />
       <meta name="keywords" content="The Journey" />
