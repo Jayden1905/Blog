@@ -146,6 +146,7 @@ export const getAdjacentPosts = async (createdAt: string, slug: string) => {
         }
         createdAt
         slug
+        excerpt
         categories {
           name
           slug

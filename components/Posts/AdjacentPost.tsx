@@ -91,7 +91,7 @@ export default function AdjacentPost({ post }: AdjacentPostProps) {
                       category.name.toUpperCase()
                     )}
                   </p>
-                  <h1 className="text-2xl font-extrabold">{data.next.title}</h1>
+                  <h1 className="text-xl font-extrabold">{data.next.title}</h1>
                   <p className="mt-4 text-sm font-thin opacity-60">
                     {data.next.excerpt}
                   </p>

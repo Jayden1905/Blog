@@ -34,7 +34,7 @@ export default function Blog({ post, categories }: BlogProps) {
           <p className="mb-2 text-[0.75rem] tracking-widest text-secondary">
             {category.name.toUpperCase()}
           </p>
-          <h1 className="text-2xl font-extrabold">{post.title}</h1>
+          <h1 className="text-xl font-extrabold">{post.title}</h1>
           <p className="mt-4 text-sm font-thin opacity-60">{post.excerpt}</p>
           <p className="mt-auto text-sm opacity-60">
             {moment(post.createdAt).format("MMM DD, YYYY")}
