@@ -13,8 +13,12 @@ type ArticleDetailsProps = {
 export default function ArticleDetails({ post }: ArticleDetailsProps) {
   const [category] = post.categories.map((item) => item);
 
-  useEffect(() => {
+  function handleScroll() {
     window.scroll(0, 0);
+  }
+
+  useEffect(() => {
+    handleScroll();
   }, []);
 
   return (

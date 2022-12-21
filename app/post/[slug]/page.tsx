@@ -7,6 +7,7 @@ export const revalidate = 30;
 export const generateStaticParams = async () => {
   const slugs = (await getSlugs()) as Slug;
   const slugRoutes = slugs.posts.map((slug) => slug.slug);
+  console.log(slugs);
 
   return slugRoutes.map((slug) => ({
     slug,
