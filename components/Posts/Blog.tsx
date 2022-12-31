@@ -14,7 +14,7 @@ type BlogProps = {
 
 export default function Blog({ post, categories, length }: BlogProps) {
   const [category] = categories.map((item) => item);
-  const odd = length / 2 !== 0 ? true : false;
+  const odd = length % 2 == 0 ? false : true;
 
   return (
     <Link

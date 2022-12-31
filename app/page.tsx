@@ -21,6 +21,7 @@ export default async function HomePage() {
   const post = await fetchPosts();
   const features = await fetchFeaturedPosts();
   const postLength = post.length;
+  console.log(post.length);
 
   return (
     <div className="container relative top-32 mx-auto h-full scroll-smooth bg-primary px-4 font-ibmp md:px-20 lg:top-0">
