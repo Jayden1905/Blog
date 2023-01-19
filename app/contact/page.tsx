@@ -1,7 +1,9 @@
+import Layout from '../../components/Layout/main'
+
 export default function Contact() {
   return (
-    <div>
+    <Layout>
       <h1>Contact Me</h1>
-    </div>
-  );
+    </Layout>
+  )
 }

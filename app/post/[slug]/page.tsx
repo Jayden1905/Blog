@@ -1,35 +1,35 @@
-import ArticleDetails from "../../../components/Posts/ArticleDetails";
-import { PostDetailProps, Slug } from "../../../interfaces";
-import { getPostDetails, getSlugs } from "../../../services/services";
+import Layout from '../../../components/Layout/main'
+import ArticleDetails from '../../../components/Posts/ArticleDetails'
+import { PostDetailProps, Slug } from '../../../interfaces'
+import { getPostDetails, getSlugs } from '../../../services/services'
 
-export const revalidate = 30;
+export const revalidate = 30
 
 export const generateStaticParams = async () => {
-  const slugs = (await getSlugs()) as Slug;
-  const slugRoutes = slugs.posts.map((slug) => slug.slug);
-  console.log(slugs);
+  const slugs = (await getSlugs()) as Slug
+  const slugRoutes = slugs.posts.map((slug) => slug.slug)
 
   return slugRoutes.map((slug) => ({
     slug,
-  }));
-};
+  }))
+}
 
 const fetchPostDetail = async (slug: string) => {
-  const data = (await getPostDetails(slug)) as PostDetailProps;
+  const data = (await getPostDetails(slug)) as PostDetailProps
 
-  return data;
-};
+  return data
+}
 
 type Params = {
-  slug: string;
-};
+  slug: string
+}
 
 export default async function PostPage({ params }: { params: Params }) {
-  const post = await fetchPostDetail(params.slug);
+  const post = await fetchPostDetail(params.slug)
 
   return (
-    <div>
+    <Layout>
       <ArticleDetails post={post} />
-    </div>
-  );
+    </Layout>
+  )
 }
